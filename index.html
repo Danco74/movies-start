@@ -25,7 +25,8 @@
             </div>
             <div class="movies-container">
                 <div class="movie-container" ng-repeat="movie in movies track by $index">
-                    <div class="movie-item" ng-click="onMovieClicked()">
+                    <movie-directive my-movie="movie" allow-action="isDeleting" delete='deleteMovie()'></movie-directive>
+                    <!-- <div class="movie-item" ng-click="onMovieClicked()">
                         <div class="movie-image-container">
                             <img class="movie-image" ng-src="{{movie.posterImage}}" alt="film image" ng-click="deleteMovie()" />
                             <div ng-show="isDeleting" class="movie-delete-icon glyphicon glyphicon-minus-sign delete-icon" />
@@ -37,7 +38,7 @@
                                 <span ng-repeat="res in movie.supportedResolution track by $index">{{res}}p </span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -47,6 +48,7 @@
     <script type="text/javascript" src="app/app.js"></script>
     <script type="text/javascript" src="app/movies/moviesService.js"></script>
     <script type="text/javascript" src="app/movies/moviesCtrl.js"></script>
+    <script type="text/javascript" src="app/movies/moviesDirective.js"></script>
 </body>
 
 </html>

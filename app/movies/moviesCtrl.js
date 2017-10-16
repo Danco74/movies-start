@@ -4,7 +4,7 @@ app.controller('MoviesCtrl', ['$scope', 'moviesModel', function($scope, moviesMo
   $scope.movies = moviesModel.getMovies();
 
   $scope.addMovie = function() {
-    alert("This functionality will be available soon!");
+    alert("This functionality will be available soon!!");
   };
 
   $scope.toggleDeleteMode = function() {
@@ -12,6 +12,9 @@ app.controller('MoviesCtrl', ['$scope', 'moviesModel', function($scope, moviesMo
   };
 
   $scope.deleteMovie = function() {
+    if ($scope.isDeleting){
+      moviesModel.removeMovie(this.$index);
+    }
     // TODO: delete the movie only if the app is in "delete mode"
   };
 }]);
